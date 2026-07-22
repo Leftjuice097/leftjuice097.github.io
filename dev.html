@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<head>
+    <title>Leftjuice's Dev projects</title>
+    <link href="sty.css" rel="stylesheet">
+<style>
+    #fa {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        text-decoration: none;
+    }
+    img-box {
+        text-align: center;
+        gap: 5px;
+    }
+</style>    
+</head>
+<h-a></h-a>
+<div style="margin: 8px;">
+    <h1>My works of coding projects</h1>
+    <p>Hi! You've found the correct place where I share my development projects!</p>
+    <h2>EarthOS</h2>
+    <p>I'm currently developing a Scratch operating system named EarthOS! Its current version is <span id="ver" style="font-weight: bold;"></span>. While the OS is still being developed as usual, there's a lot of delays since it's an hobby project and I don't rush much on the operating system.<br>
+    I share my operating systems at the other GitHub account <a href=https://github.com/crayonity97/EarthOS id="fa"><img src=https://github.com/favicon.ico style="width: 18px; height: 18px"><b>crayonity97</b></a>. <s>Also don't ask me why that account of mine has a she/her pronoun while mine is he/they I won't answer!!</s></p>
+    <div style="display: flex;">
+        <img-box img="/dev/holy.png" w="90%">Holy builds</img-box>
+        <img-box img="/dev/4.png" w="74%">EarthOS 4 Beta 3</img-box>
+        <img-box img="/dev/mathlibs.png" w="95%">Math libraries</img-box>
+    </div>
+    <h2>This website itself!</h2>
+    <p>What you're looking right now is in fact, one of my coding projects. I love HTML! I love CSS! <s>I love JavaScript!</s></p>
+    <div style="display: flex;">
+        <img-box img="/dev/js.png" style="opacity: 0.5;">JavaScript</img-box>
+    </div>
+    <h2>The Goodies tab</h2>
+    <p>There's a lot of goodies that I've made for you visitors to use while I'm on my website! Especially the randomizer, you should try it!</p>
+    <div style="display: flex;">
+        <img-box img="/dev/long_code.png" w="90%">😭🙏</img-box>
+        <img-box img="/dev/randomizer.png" w="90%">Well that's a lot</img-box>
+    </div>
+    <p>And that's all for now! There's many more projects I could share but it's currently incomplete, or canceled.</p>
+</div>
+<f-a></f-a>
+<script src="template.js"></script>
+<script>
+    fetch('https://raw.githubusercontent.com/crayonity97/earthos_uc/refs/heads/main/latest_release')
+    .then (r => r.json())
+    .then (data => {
+        document.getElementById("ver").textContent = data.v;
+    })
+</script>

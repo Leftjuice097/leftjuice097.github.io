@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+    <title>Leftjuice's Website | Clock!</title>
+    <link href="sty.css" rel="stylesheet">
+    <style>
+        #area-51 {
+            text-align: center;
+            user-select: none;
+        }
+        #area-52 :is(label, h1){
+
+            margin: 8px
+        }
+        #area-52 {
+            background: var(--clock1);
+            flex: 1;
+        }
+        #tim1 {
+            font-size: 196px;
+            margin: 0;
+            padding: 0;
+        }
+        #tim2 {
+            font-size: 32px;
+            margin-top: -2%
+        }
+        .btt1 {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btt1 input[type=radio]{
+            display: none;
+            -webkit-appearance: none;
+            text-align: center;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            border: 2px solid var(--clock2);
+            cursor: pointer;
+            display: grid;
+        }
+        .btt1 input[type=radio]::before {
+            content: "✓";
+            width: 14px;
+            height: 14px;
+            transform: scale(0);
+        }
+        .btt1 input[type=radio]:checked::before {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<h-a></h-a>
+    <div id="area-51">
+        <h1 style="margin-bottom: -1.3%; font-weight: lighter;" id="tim0" ></h1>
+        <h1 id="tim1" class="no"></h1>
+        <h1 id="tim2" class="no"></h1>
+    </div>
+    <div id="area-52">
+        <h1 class="kawaii">Options :3</h1>
+        <label class="btt1">
+            <input type="radio" id="sec" onclick="ssas(this)" value="true">
+            <span>Enable seconds</span>
+        </label>
+        <label class="btt1">
+            <input type="radio" id="ampm" onclick="ssas(this)" value="true">
+            <label for="ampm">AM/PM time</label>
+        </label>
+        <label class="btt1">
+            <input type="radio" id="zone" onclick="ssas(this)" value="true">
+            <label for="zone">Reveal timezone info</label>
+        </label>
+    </div>
+<script src="template.js"></script>
+<script>
+    let defaultZone = "Asia/Ho_Chi_Minh"
+    abc();
+    
+    function abc() {
+        let temp = new Intl.DateTimeFormat("en-US", {
+            timeZone: defaultZone,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        }).formatToParts(new Date());
+        const g = type => temp.find(a => a.type === type).value;
+    
+        let f4 = `${Number(g("hour"))}:${g("minute")}`;
+        let f5 = g("dayPeriod");
+
+        const d = new Intl.DateTimeFormat("en-GB", {
+            timeZone: defaultZone,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            weekday: "long",
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+            hour12: false
+        }).formatToParts(new Date());
+        const e = type => d.find(a => a.type === type).value;
+    
+        const f1 = `${e("hour")}:${e("minute")}`;
+        const f2 = e("second");
+        const f3 = `${e("weekday")}, ${e("day")} ${e("month")} ${e("year")}`;
+        if (jkl()) {if (document.documentElement.dataset.theme === "pink") {document.getElementById("tim0").innerHTML = `🎀 (${defaultZone}) My cuwwent time is... 🎀`} else {document.getElementById("tim0").innerHTML = `(${defaultZone}) My current time is...`}}
+        else { if (document.documentElement.dataset.theme === "pink") {document.getElementById("tim0").innerHTML = `🎀 (UTC+7) My cuwwent time is... 🎀`} else {document.getElementById("tim0").innerHTML = `(UTC+7) My current time is...`}}
+        if (def()) {
+            if (ghi()) {
+                document.getElementById("tim1").innerHTML = `${f4}<span style="font-size:87px">:${f2} ${f5}</span>`
+            }
+            else {
+                document.getElementById("tim1").innerHTML = `${f1}<span style="font-size:87px">:${f2}</span>`
+            }
+        }
+        else {
+            if (ghi()){
+                document.getElementById("tim1").innerHTML = `${f4}<span style="font-size:87px"> ${f5}</span>`
+            }
+            else {
+                document.getElementById("tim1").innerHTML = `${f1}`
+            }
+        }
+        document.getElementById("tim2").innerHTML = `${f3}`
+    };
+    setInterval(() => {
+        abc();
+    }, 1000)
+    let dfsdfadfs = null;
+    function ssas(s) {
+        if (dfsdfadfs === s) {
+            s.checked = false;
+            dfsdfadfs = null;
+        } else {
+            dfsdfadfs = s;
+        }
+        if (s == "sec") {
+            def();
+        }
+        if (s == "ampm") {
+            ghi();
+        }
+        if (s == "zone") {
+            jkl();
+        }
+    }
+    function def() {
+        return document.getElementById("sec").checked;
+    }
+    function ghi() {
+        return document.getElementById("ampm").checked;
+    }
+    function jkl() {
+        return document.getElementById("zone").checked;
+    }
+</script>
+<f-a></f-a>

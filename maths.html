@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+<head>
+    <title>Leftjuice's Website | Randomizer</title>
+    <link href="sty.css" rel="stylesheet">
+    <style>
+        [id^="b-"], [id^="c-"] {
+            background: var(--maths1);
+            display: inline-block;
+            padding: 5px;
+            width: auto;
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+        [id^="c-"] {
+            background: var(--maths2)  !important;
+        }
+        html {
+            interpolate-size: allow-keywords;
+        }
+        .animate::details-content {
+            overflow: hidden;
+            transform: translateY(-32px);
+            height: 0;
+            opacity: 0;
+            transition: height 200ms ease-out, opacity 200ms ease-out, transform 288ms ease-out, content-visibility 200ms allow-discrete;
+        }
+        .animate[open]::details-content {
+            height: auto;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate .he {
+            transition: transform 288ms ease-out;
+            padding: 1rem;
+        }
+        .animate[open] .he {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<h-a></h-a>
+    <div style="margin: 8px;">
+        <h1>Maths</h1>
+        <p>I've stockpiled a good amount of math equations over the past couple of months. Here's the collection to a bunch of it, and some equations are from other mathematicians that I bookmark here for purposes.</p>
+        <details class="animate">
+        <summary style="font-size: 22px; user-select: none;" class="kawaii">&lt;Reveal the math equations.. &gt;:3&gt;</summary>
+        <div class="he">
+        <div id="mathgen"></div>
+        <p>Only this much equations for now.</p>
+        </div>
+        </details>
+    </div>
+<f-a></f-a>
+<script src="template.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/mathjs@15.2.0/lib/browser/math.min.js"></script>
+<script>
+MathJax = {
+    tex: {
+        inlineMath: [['\\(', '\\)']]
+    }
+};
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script type="module">
+    function comment(a, com) {document.getElementById(`ins-${a}`).innerHTML = `<i style="margin-left: 12px; opacity: 0.8; width: 245px; display: inline-block">${com}</i>`}
+    const collect = await fetch("./goodies/eq.math");
+    const collec = await collect.text();
+    const colle = collec.split("\n");
+    const math3 = document.getElementById("mathgen");
+
+    for (let s = 0; s < colle.length; s++) {
+        const b = document.createElement("ma-th");
+        b.id = s + 1;
+        math3.appendChild(b);
+    }
+    let a = 1
+    
+    for (const i of colle) {
+        const coll = i.trim();
+        if (coll !== "") {
+            const yes = document.getElementById(`a-${a}`);
+            if (!coll.startsWith("@")) {
+                const col = (math.evaluate(coll));
+                const co = math.parse(coll).toTex();
+                yes.innerHTML = `<div id="b-${a}">\\(${co}\\)</div><span style="font-size: 25px">   =   </span><div id="c-${a}">${col}</div><span id="ins-${a}"></span><div></div><span style="font-size: 22px">LaTeX:   </span><div id="latex-${a}" style="width: auto; display: inline-block; background: var(--maths3); font-size: 15px; margin-left: 2px; margin-bottom: 6px; border-radius: 18px; max-width: 100%; overflow-x: auto; white-space: nowrap"><pre><code style="font-family: monospace">${co}</code></pre></div>`;
+            }
+            else {
+                const col = coll.slice(1);
+                yes.innerHTML = `<div id="b-${a}">\\(${col}\\)</div><span style="font-size: 25px"></span><span id="ins-${a}"></span><div id="latex-${a}"></div><span style="font-size: 22px">LaTeX:   </span><div id="latex-${a}" style="width: auto; display: inline-block; background: var(--maths3); font-size: 15px; margin-left: 2px; border-radius: 18px; max-width: 100%; overflow-x: auto; white-space: nowrap"><pre><code style="font-family: monospace">${coll}</code></pre></div>`
+            }
+            a++
+        }
+    }
+    MathJax.typesetPromise();
+    comment(4, "C. P. Willians' formula for prime numbers")
+
+</script>
+<script>
+    class spawnDiv extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            const y = this.getAttribute("id");
+
+            this.innerHTML = `<div id="a-${y}"></div>`
+        }
+    }
+    customElements.define('ma-th', spawnDiv)
+</script>
+</html>

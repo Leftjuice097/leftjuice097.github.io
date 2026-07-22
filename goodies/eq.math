@@ -1,0 +1,4 @@
+(ceil(pi)^floor(pi))-(ceil(pi)+(floor(pi)*(pi^(pi-pi)+pi^(pi-pi))))
+((ceil(pi)floor(pi))sqrt(ceil(pi)))-sqrt(ceil(pi))
+((ceil(pi)*floor(pi))-(floor(pi)-(ceil(pi)-floor(pi))))
+@1+\sum_{i=1}^{2n}\left\lfloor\left(\frac{n}{\sum_{j=1}^{i}\left\lfloor\left(\cos\left(\pi\frac{(j-1)!+1}{j}\right)\right)^2\right\rfloor}\right)\right\rfloor

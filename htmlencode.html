@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Leftjuice's Website</title>
+    <link href="sty.css" rel="stylesheet">
+    <style>
+        .board {
+            background: var(--htmlencode1);
+            width: 99.5%;
+            height: 474px;
+            color: whitesmoke;
+            border: none;
+            border-radius: 5px;
+            font-family: monospace;
+            padding: 5px;
+        }
+    </style>
+</head>
+<h-a></h-a>
+<div style="margin: 8px">
+    <h1>SafeHTML</h1>
+    <textarea placeholder="Paste your HTML!" class="board" id="collect"></textarea>
+    <button style="margin-top: 4px;" id="h">Convert to SafeHTML!</button>
+    <div style="display: flex; justify-content: space-between; align-items: center;"><h1 style="margin: 0;">Result</h1><button id="copy" style="right: 0;">⧉ Copy</button></div>   
+    <div class="board" id="CO"></div>
+</div>
+<f-a></f-a>
+<script src="template.js"></script>
+<script src="/goodies/encode.js"></script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+    <title>Leftjuice's Website | Randomizer</title>
+    <link href="sty.css" rel="stylesheet">
+    <style>
+        input, #what, #what2 {
+            background: var(--randomizer1);
+            border: none;
+            font-size: 52px;
+            width: 256px;
+            border-radius: 7px;
+        }
+        #what, #what2{
+            padding: 0px 3px;
+        }
+        #slash {
+            font-size: 36px;
+        }
+        #d, #g {
+            input::placeholder {
+                font-size: 34px;
+            }
+        }
+        input::placeholder {
+            color: white !important;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<h-a></h-a>
+<div style="margin: 8px;">
+    <h1>Number randomizer</h1>
+    <p>Pick a number!</p>
+    <num-in id="a"></num-in><span style="font-size: 36px;"> to </span><num-in id="b"></num-in><span style="font-size: 36px; margin-left: 30px;">Result: </span><span id="what"></span><br>
+    <button style="margin-top: 5px;" id="press">Randomize!</button>
+    <h1>Date randomizer</h1>
+    <p>Pick a date!</p>
+    <date-in id="c" p="day" lim="1,31" w="128px"></date-in><span id="slash">/</span><date-in id="d" p="month" lim="1,12" w="128px"></date-in><span id="slash">/</span><date-in id="e" p="year" lim="0,4194304" w="256px"></date-in><span style="font-size: 36px;"> to </span><date-in id="f" p="day" lim="1,31" w="128px"></date-in><span id="slash">/</span><date-in id="g" p="month" lim="1,12" w="128px"></date-in><span id="slash">/</span><date-in id="h" p="year" lim="0,4194304" w="256px"></date-in><span style="font-size: 36px; margin-left: 30px;">Result: </span><span id="what2"></span><br>
+    <button style="margin-top: 5px;" id="press2">Randomize!</button>
+</div>
+<f-a></f-a>
+<script src="/goodies/randomizer.js"></script>
+<script src="template.js"></script>
+
