@@ -130,7 +130,10 @@ button:hover{
     font-family: 'Lilita One';
     font-size: 22px; 
     user-select: none;
-}  
+}
+html {
+    interpolate-size: allow-keywords;
+}
 .animate::details-content {
     overflow: hidden;
     transform: translateY(-32px);
@@ -139,7 +142,7 @@ button:hover{
     transition: height 200ms ease-out, opacity 200ms ease-out, transform 288ms ease-out, content-visibility 200ms allow-discrete;
 }
 .animate[open]::details-content {
-    height: auto;
+    max-height: 1000px;
     opacity: 1;
     transform: translateY(0);
 }
