@@ -5,15 +5,15 @@ class header2 extends HTMLElement {
 connectedCallback() {
     this.innerHTML = `
         <div class="headr">
-                <a href="./">Home</a>
-                <a href="./clock.html">Clock</a>
-                <a href="./dev.html">Development Projects</a>
+                <a href="/">Home</a>
+                <a href="/clock">Clock</a>
+                <a href="/dev">Development Projects</a>
                 <a href="#" onclick="menu(); return false;">Goodies</a>
                 <div class="asdas">
                     <div class="menu" style="display:none">
-                        <a href="./htmlencode.html">SafeHTML</a>
-                        <a href="./randomizer.html">Randomizers</a>
-                        <a href="./maths.html">Maths</a>
+                        <a href="/htmlencode">SafeHTML</a>
+                        <a href="/randomizer">Randomizers</a>
+                        <a href="/maths">Maths</a>
                     </div>
                 </div>
         </div>
@@ -34,7 +34,7 @@ connectedCallback() {
             <a href="https://twitter.com/Leftjuice097"><img src=https://twitter.com/favicon.ico>Twitter</a>
             <a href="https://youtube.com/@Leftjuice_097"><img src=https://www.youtube.com/s/desktop/e2e75771/img/favicon.ico style="width: 32px; height: 32px">Youtube</a>
             <a href="https://scratch.mit.edu/users/Leftjuice097"><img src=https://scratch.mit.edu/favicon.ico>Scratch</a>
-            <a href="https://sheezy.art/Leftjuice_097"><img src="./favicons/sheezy_favicon.ico" style="width: 32px; height: 32px">sheezy.art</a>
+            <a href="https://sheezy.art/Leftjuice_097"><img src="/favicons/sheezy_favicon.ico" style="width: 32px; height: 32px">sheezy.art</a>
             <a href="https://github.com/Leftjuice097"><img src=https://github.com/favicon.ico>GitHub</a>
         </div>
         </div>

@@ -1,9 +1,12 @@
+---
+---
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
 <head>
-    <title>Leftjuice's Website | Randomizer</title>
-    <link href="sty.css" rel="stylesheet">
+    <title>Leftjuice's Website | Maths</title>
+    <link href="/sty.css" rel="stylesheet">
     <style>
         [id^="b-"], [id^="c-"] {
             background: var(--maths1);
@@ -21,25 +24,6 @@
         html {
             interpolate-size: allow-keywords;
         }
-        .animate::details-content {
-            overflow: hidden;
-            transform: translateY(-32px);
-            height: 0;
-            opacity: 0;
-            transition: height 200ms ease-out, opacity 200ms ease-out, transform 288ms ease-out, content-visibility 200ms allow-discrete;
-        }
-        .animate[open]::details-content {
-            height: auto;
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .animate .he {
-            transition: transform 288ms ease-out;
-            padding: 1rem;
-        }
-        .animate[open] .he {
-            transform: translateY(0);
-        }
     </style>
 </head>
 <h-a></h-a>
@@ -47,16 +31,16 @@
         <h1>Maths</h1>
         <p>I've stockpiled a good amount of math equations over the past couple of months. Here's the collection to a bunch of it, and some equations are from other mathematicians that I bookmark here for purposes.</p>
         <details class="animate">
-        <summary style="font-size: 22px; user-select: none;" class="kawaii">&lt;Reveal the math equations.. &gt;:3&gt;</summary>
-        <div class="he">
+        <summary class="kawaii">&lt;Reveal the math equations.. &gt;:3&gt;</summary>
+        <div class="an">
         <div id="mathgen"></div>
         <p>Only this much equations for now.</p>
         </div>
         </details>
     </div>
 <f-a></f-a>
-<script src="template.js"></script>
-<script src=" https://cdn.jsdelivr.net/npm/mathjs@15.2.0/lib/browser/math.min.js"></script>
+<script src="/template.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjs@15.2.0/lib/browser/math.min.js"></script>
 <script>
 MathJax = {
     tex: {
@@ -69,7 +53,7 @@ MathJax = {
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 <script type="module">
     function comment(a, com) {document.getElementById(`ins-${a}`).innerHTML = `<i style="margin-left: 12px; opacity: 0.8; width: 245px; display: inline-block">${com}</i>`}
-    const collect = await fetch("./goodies/eq.math");
+    const collect = await fetch("/goodies/eq.math");
     const collec = await collect.text();
     const colle = collec.split("\n");
     const math3 = document.getElementById("mathgen");
@@ -99,7 +83,6 @@ MathJax = {
     }
     MathJax.typesetPromise();
     comment(4, "C. P. Willians' formula for prime numbers")
-
 </script>
 <script>
     class spawnDiv extends HTMLElement {
