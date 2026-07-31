@@ -142,7 +142,7 @@ html {
     transition: height 200ms ease-out, opacity 200ms ease-out, transform 288ms ease-out, content-visibility 200ms allow-discrete;
 }
 .animate[open]::details-content {
-    max-height: 1000px;
+    height: auto;
     opacity: 1;
     transform: translateY(0);
 }
@@ -152,4 +152,7 @@ html {
 }
 .animate[open] .an {
     transform: translateY(0);
+}
+summary {
+    list-style: none;
 }
