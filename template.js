@@ -11,9 +11,9 @@ connectedCallback() {
                 <a href="#" onclick="menu(); return false;">Goodies</a>
                 <div class="asdas">
                     <div class="menu" style="display:none">
-                        <a href="/htmlencode/">SafeHTML</a>
-                        <a href="/randomizer/">Randomizers</a>
-                        <a href="/maths/">Maths</a>
+                        <a href="/goodies/htmlencode/">SafeHTML</a>
+                        <a href="/goodies/randomizer/">Randomizers</a>
+                        <a href="/goodies/maths/">Maths</a>
                     </div>
                 </div>
         </div>
