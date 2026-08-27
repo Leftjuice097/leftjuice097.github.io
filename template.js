@@ -1,3 +1,17 @@
+// modifying crap cause jekyll hates "document.lastModified". 17:02 25 Aug 2026
+const modify = {
+  "/": "2026-07-31T11:19:19+07:00", 
+  "/clock/": "2026-07-31T11:19:21+07:00", 
+  "/dev/": "2026-07-31T11:19:21+07:00", 
+  "/goodies/htmlencode/": "2026-08-01T11:43:34+07:00", 
+  "/goodies/maths/": "2026-08-01T11:43:33+07:00", 
+  "/goodies/randomizer/": "2026-08-01T11:43:33+07:00", 
+  "/occ/": "2026-08-27T12:11:27+07:00", 
+};
+const modified = new Date(modify[window.location.pathname]);
+// total times I have to run this python script: 8
+// increment it every time. peace out ,, > _ < ,,
+
 class header2 extends HTMLElement {
     constructor() {
         super();
@@ -42,18 +56,16 @@ connectedCallback() {
             <p style="margin: 0; padding: 0; font-size: 14px">This page was last modified at <span id="time" style="font-weight: bold;"></span><span id="egg" style="cursor: pointer; user-select: none"> 🌺</span>
         </div>
     `;
-    let a = document.lastModified;
-    let b = new Date(a).toLocaleString(undefined, {
-    hour: 'numeric',
-    minute: 'numeric',
-    hour12: false,
-    })
-    let d = new Date(a).toLocaleDateString(undefined, {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-    })
-    this.querySelector("#time").textContent = `${b}, ${d}`
+
+    this.querySelector("#time").textContent = modified.toLocaleString("en-GB", 
+    {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false
+    }).replace(",", " at");
 
 // welcome to the pink side :3
     const bd = document.documentElement;

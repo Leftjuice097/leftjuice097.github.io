@@ -7,10 +7,21 @@ permalink: /occ/
     <title>Leftjuice's Website | The OCC</title>
     <link href="/sty.css" rel="stylesheet">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
         table {border-collapse: collapse; width: 100%; text-align: center;}
         th, td {border: 1px solid var(--occ2); padding: 5px}
         th {background: var(--occ1); color: #fff}
         td {background: whitesmoke; font-size: 24px;}
+        .cInvites {padding: 5px; border-radius: 10px; overflow: hidden;}
+        c-inv a {display: block; width: max-content; margin: auto; padding: 3px 141px; text-decoration: none; border-radius: 5px; background: rgba(0, 0, 0, 0.2); transition: background 167ms ease-in, color 167ms ease-in;} /** SIX SEVENNN **/
+        c-inv a:hover {background: rgba(255, 255, 255, 0.2); color: blacK}
+        code {font-family: 'Jetbrains Mono'; background: rgb(67,67,67); border-radius: 2px; padding: 0px 5px;}
+        @font-face {
+            font-family: "Shag Lounge";
+            src: url("/Shag Lounge.otf") format("opentype");
+            font-weight: normal;
+            font-style: normal;
+        }
     </style>
 
     <link rel="canonical" href="https://leftjuice097.github.io/occ">
@@ -24,40 +35,72 @@ permalink: /occ/
         <p>Woah! Looks like you've found a secret tab that I haven't finished implimenting yet! Looks like you've dug it through my GitHub pages or you came across a sign up of mine in an OCC server.</p>
         <details class="animate">
         <summary class="kawaii">&lt;Explore my camp experience!&gt;</summary>
-        <div class="an">
-            <table>
-            <thead>
-                <tr>
-                    <th>Camp name</th>
-                    <th>Season</th>
-                    <th>Icon</th>
-                    <th>Character name</th>
-                    <th>Hosted by</th>
-                    <th>Placement</th>
-                    <th>Cast of</th>
-                    <th>Stage</th>
-                    <th>Vote spread</th>
-                    <th>Start</th>
-                    <th>End</th>
-                    <th>My comments</th>
-                </tr>   
-            </thead>
-            <tbody id="camps"></tbody>
-                <camp-i cn="PLONK" ssn="7" icn="Debit Card (Card)|She/Her" hn="vidzgoingham" plc="10/10" stg="Pre-finale" vts="7-3" s-e="Sun, 9 Mar 2025-Tue, 12 Mar 2025" c="linear-gradient(180deg,rgb(3,201,179)|rgb(3,174,116))">My first ever camp! Even though I played sloppily because I don't know how do they work yet but it was a pretty excting experience! And I also turned 73 into a meme for some reason...</camp-i>
-                <camp-i cn="iDEATH" ssn="3" icn="Weather Detector|He/Him" hn="cadencebd" plc="21/21" stg="Pre-merge" vts="4-3-1-1-1" s-e="Tue, 25 Mar 2025-Mon, 31 Mar 2025" c="linear-gradient(180deg,rgb(175,222,175)|rgb(160,205,160))">Don't ask...</camp-i>
-                <camp-i cn="THAT" ssn="1" icn="Alarm Clock|She/Her" hn=".fel1st" plc="11/26" stg="Merge" vts="8-2-1" s-e="Thu, 15 May 2025-Wed, 30 Jul 2025" c="linear-gradient(180deg,rgb(235,127,180)|rgb(255,178,187))">After the first 2 camps, I've learned the basics of camps and actually got further through in this camp, this camp has the most exciting season of all of the camps I've ever competed for now.</camp-i>
-                <camp-i cn="Shop Till You Drop" ssn="4" icn="Gift Card|She/Her" hn="tuned0ut.<br>bendblox" plc="14/20" stg="Pre-merge" vts="4-2-1" s-e="Mon, 3 Nov 2025-Fri, 12 Dec 2025" c="linear-gradient(180deg,rgb(172,60,198)|rgb(211,87,243))">To be honest, my social game was extremely weak in the camp, then got out due to a miscommunication (a.k.a. "did not accept alliance request").</camp-i>
-                <camp-i cn="Word's Camp" ssn="14" icn="Calendar|They/Them" hn="whats.the.word" plc="12/15" stg="Pre-merge" vts="5-1" s-e="Fri, 13 Feb 2026-Tue, 3 Mar 2026" c="linear-gradient(180deg,rgb(255,188,88)|rgb(255,156,9))">I took a risky move on the fifth challenge by doing it near the deadline. Then I got voted out, I assumed that it was the dead last placement of me for the tribes. And also created what I call "Ares vs Athena".</camp-i>
-                <camp-i cn="Tropical Takedown" ssn="3" icn="Radon|She/Her" hn="abcsyttr" plc="2/24" stg="Finale" vts="4-3" s-e="Fri, 1 May 2026-Sat, 1 Aug 2026" c="linear-gradient(180deg,rgb(234,155,53)|rgb(255,199,125))">An unexpected OC! My social game was the equvialent to a sheep so I fumbled the jury. Needless to say I need to stop blindingly follow others in my future camps</camp-i>
-                <camp-i cn="iDEATH" ssn="5" icn="Weather Detector|He/Him" hn="cadencebd" plc="[FINAL 12]/18" stg="Pre-merge" vts="-" s-e="Tue, 16 Jun 2026-TBA" c="linear-gradient(180deg,rgb(232,203,135)|rgb(202,177,118))">My gameplay is currently disappointing but I'm planning to up the game. The camp is pretty slow paced for now.</camp-i>
-            </table>
-        </div>
+            <div class="an">
+                <table>
+                <thead>
+                    <tr>
+                        <th>Camp name</th>
+                        <th>Season</th>
+                        <th>Icon</th>
+                        <th>Character name</th>
+                        <th>Hosted by</th>
+                        <th>Placement</th>
+                        <th>Cast of</th>
+                        <th>Stage</th>
+                        <th>Vote spread</th>
+                        <th>Start</th>
+                        <th>End</th>
+                        <th>My comments</th>
+                    </tr>   
+                </thead>
+                <tbody id="camps"></tbody>
+                    <camp-i cn="PLONK" ssn="7" icn="Debit Card (Card)|She/Her" hn="vidzgoingham" plc="10/10" stg="Pre-finale" vts="7-3" s-e="Sun, 9 Mar 2025-Tue, 12 Mar 2025" c="linear-gradient(180deg,rgb(3,201,179)|rgb(3,174,116))">My first ever camp! Even though I played sloppily because I don't know how do they work yet but it was a pretty excting experience! And I also turned 73 into a meme for some reason...</camp-i>
+                    <camp-i cn="iDEATH" ssn="3" icn="Weather Detector|He/Him" hn="cadencebd" plc="21/21" stg="Pre-merge" vts="4-3-1-1-1" s-e="Tue, 25 Mar 2025-Mon, 31 Mar 2025" c="linear-gradient(180deg,rgb(175,222,175)|rgb(160,205,160))">Don't ask...</camp-i>
+                    <camp-i cn="THAT" ssn="1" icn="Alarm Clock|She/Her" hn=".fel1st" plc="11/26" stg="Merge" vts="8-2-1" s-e="Thu, 15 May 2025-Wed, 30 Jul 2025" c="linear-gradient(180deg,rgb(235,127,180)|rgb(255,178,187))">After the first 2 camps, I've learned the basics of camps and actually got further through in this camp, this camp has the most exciting season of all of the camps I've ever competed for now.</camp-i>
+                    <camp-i cn="Shop Till You Drop" ssn="4" icn="Gift Card|She/Her" hn="tuned0ut.<br>bendblox" plc="14/20" stg="Pre-merge" vts="4-2-1" s-e="Mon, 3 Nov 2025-Fri, 12 Dec 2025" c="linear-gradient(180deg,rgb(172,60,198)|rgb(211,87,243))">To be honest, my social game was extremely weak in the camp, then got out due to a miscommunication (a.k.a. "did not accept alliance request").</camp-i>
+                    <camp-i cn="Word's Camp" ssn="14" icn="Calendar|They/Them" hn="whats.the.word" plc="12/15" stg="Pre-merge" vts="5-1" s-e="Fri, 13 Feb 2026-Tue, 3 Mar 2026" c="linear-gradient(180deg,rgb(255,188,88)|rgb(255,156,9))">I took a risky move on the fifth challenge by doing it near the deadline. Then I got voted out, I assumed that it was the dead last placement of me for the tribes. And also created what I call "Ares vs Athena".</camp-i>
+                    <camp-i cn="Tropical Takedown" ssn="3" icn="Radon|She/Her" hn="abcsyttr" plc="2/24" stg="Finale" vts="4-3" s-e="Fri, 1 May 2026-Sat, 1 Aug 2026" c="linear-gradient(180deg,rgb(234,155,53)|rgb(255,199,125))">An unexpected OC! My social game was the equvialent to a sheep so I fumbled the jury. Needless to say I need to stop blindingly follow others in my future camps</camp-i>
+                    <camp-i cn="iDEATH" ssn="5" icn="Weather Detector|He/Him" hn="cadencebd" plc="[FINAL 12]/18" stg="Pre-merge" vts="-" s-e="Tue, 16 Jun 2026-TBA" c="linear-gradient(180deg,rgb(232,203,135)|rgb(202,177,118))">My gameplay is currently disappointing but I'm planning to up the game. The camp is pretty slow paced for now.</camp-i>
+                </table>
+            </div>
+        </details>
+        <h1>Find the camps!</h1>
+        <p>If you're interested in joining an object camp that I've competed in, or just want to find me to chat about OCC, these are the links!<br>
+        I've modified some of the ad templates to make it possible for <b>Markdown</b> to parse it. Or that the camp's ad template is outdated for its season.</p>
+        <p>Remember that some of these might be outdated overtime soon because I'm not always there to modify the template on time.</p>
+        <details class="animate">
+        <summary class="kawaii">&lt;Camps I've competed in&gt;</summary>
+            <div class="an" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px">
+                <c-inv hn="@cadencebd" cl="255,255,255|255,255,255">iDEATH~5</c-inv>
+                <c-inv hn="@abcsyttr" cl="94,116,147|129,162,153">Tropical Takedown~4</c-inv>
+                <c-inv hn="@sleepyhead.z_z" cl="236,255,254|176,173,160">Sailin' Around The Seas~10</c-inv>
+                <c-inv hn="@whats.the.word" cl="255,193,244|178,135,170">Word's Camp~15</c-inv>
+                <c-inv hn="@tuned0ut. & @bendblox & @abcsyttr" cl="139,190,243|70,181,131">Shop Till You Drop~6</c-inv>
+                <c-inv hn="@.fel1st & @z3eqm" cl="245,161,100|245,161,101">THAT~3½</c-inv>
+                <c-inv hn="@vidzgoingham" cl="0,0,0|0,0,0">PLONK~16</c-inv>
+            </div>
+        </details>
+        <p></p>
+        <details class="animate">
+        <summary class="kawaii">&lt;Camps that I'm in the server but haven't competed&gt;</summary>
+            <div class="an" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px">
+                <c-inv hn="@funkypurple" cl="1,0,3|27,23,56">Circle's Spherical Showdown~5</c-inv>
+                <c-inv hn="@aced4062" cl="188,82,118|135,130,173">One Way To Victory~3</c-inv>
+                <c-inv hn="@scorpy900" cl="0,0,0|0,0,0">Fruit Punch~8</c-inv>
+                <c-inv hn="@lj.dalmatian_redcrayon" cl="38,0,122|38,0,122">Object Paradise~3</c-inv>
+            </div>
         </details>
         <p>Fun fact: It takes me forever to always think and edit the camp experience sheet! I have more exciting things to do than just editing and editing this page...<br>This camp experience sheet was made on <b>31 July 2026!</b></p>
     </div>
 <f-a></f-a>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="/template.js"></script>
 <script>
+    let hostArr = []
+    let campArr = []
+    let ssnArr = []
+
     class campInfo extends HTMLElement {
         constructor() {
             super();
@@ -96,13 +139,17 @@ permalink: /occ/
             const Re = (arg) => {const Mg = Kr(arg); return Li.replace(String(Mg), `<b style="color: ${light(Xe)}">${Mg}</b>`)}
             const W  = (arg) => {return arg.includes("FINAL") ? "15px" : "24px"}
 
-            const calendarFormat = (arg) => [calendarMap[arg], arg == "Mon" || arg == "TBA" ? "#000":"#fff"]
-            const rgb2 = (ab, ac) => parseInt(ab.substring(ac, ac+2), 16)
+            const calendarFormat = (arg) => [calendarMap[arg], arg == "Mon" || arg == "TBA" ? "#000":"#fff"];
             const light1 = (arg) => {arg = arg.replace("#", ""); let r = rgb2(arg, 0); let g = rgb2(arg, 2); let b = rgb2(arg, 4); const br = (r * 299 + g * 587 + b * 114) / 1000; return br < 128 ? "#fff" : "#000"}
             const light2 = (arg2) => {arg2 = arg2.replace("linear-gradient(180deg,", "").replace("))", ")"); let [a, b] = arg2.split("|"); a = a.replace(/rgb|[()]/g, ""); b = b.replace(/rgb|[()]/g, ""); const [a1,a2,a3] = a.split(","); const [b1,b2,b3] = b.split(","); const br_avg = ((a1*299+a2*587+a3*114)/1000+(b1*299+b2*587+b3*114) / 1000)/2; return br_avg < 128 ? "#fff" : "#000";}           
-            const light = (arg3) => {return arg3.includes("linear-gradient") ? light2(arg3) : light1(arg3)}
+            const light = (arg3) => {return arg3.includes("linear-gradient") ? light2(arg3) : light1(arg3)};
+            const rgb2 = (ab, ac) => parseInt(ab.substring(ac, ac+2), 16)
             const pro = (arg4) => {const ah = arg4.split("/")[0]; return `${arg4}<img src="${genderMap[ah]}" style="width: 16px">`}
             const imgShort = (arg5) => {const b = arg5.split(" "); if (b.length < 2) {return `/occ/${arg5.toLowerCase()}s${Pd}.png`} else {let push = []; for (let i = 0; i < b.length; i++) {const n = b[i]; push.push(n[0].toLowerCase())}; return `/occ/${push.join('')}s${Pd}.png`}}
+
+            hostArr.push(Os.includes("<br>") ? Os.split("<br>") : Os);
+            ssnArr.push(Pd);
+            campArr.push(Ag);
 
             const y = document.createElement("tr");
             const s = `background: ${Rn}; color: ${light(Xe)};`
@@ -130,4 +177,89 @@ permalink: /occ/
         }
     }
     customElements.define("camp-i", campInfo)
+    
+    class campInvite extends HTMLElement {
+        constructor() {
+            super()
+        }
+        connectedCallback() {
+
+            const campInvites = {
+                "ideath": "https://discord.gg/np36jSz46P",
+                "tt": "https://discord.gg/CNjXRCnWp",
+                "sats": "https://discord.gg/e6Syv5QDQD",
+                "wc": "https://discord.gg/keUA2d9fe",
+                "styd": "https://discord.gg/SB27PCUxCq",
+                "that": "https://discord.gg/CfuVfP6Kjb",
+                "plonk": "https://discord.gg/v9J85XEj8K",
+                "css": "https://discord.gg/MnsbNcsgG2",
+                "owtv": "https://discord.gg/2z8eBbc7G7",
+                "fp": "https://discord.gg/7sNcNP5XMM",
+                "op": "https://discord.gg/zNd6EmM7Mt"
+            }
+
+            const [Be, B] = this.getAttribute("cl").split("|")
+            const [N, O, F] = Be.split(",")
+            const [S, V, U] = B.split(",")
+
+            const H2S = this.getAttribute("hn");
+            const HNO3 = this.textContent
+
+            const KOH = [(N-S)/2, (O-V)/2, (F-U)/2]
+            const NaOH = (arg) => {const a = (N*299+O*587+F*114)/1000; const b = (S*299+V*587+U*114)/1000; return (a+b)/2 < 128 ? "rgba(255,255,255,0.5)" : "rgba(0,0,0,0.5)"}    
+            const NaNO3 = () => {const b = HNO3.split(" "); if (b.length < 2) {return `/occ/campads/${HNO3.toLowerCase().replace(/~.*/g, "")}.webp`} else {let push = []; for (let i = 0; i < b.length && b[i] !== "~"; i++) {const n = b[i]; push.push(n[0].toLowerCase())}; return `/occ/campads/${push.join('')}.webp`}}
+            const KNO3 = () => {return NaNO3().replace(".webp", "").replace("/occ/campads/","")}
+
+            fetch(`${NaNO3().replace("webp","md")}`)
+                .then(r => r.text())
+                .then(g => {
+                    let text = g;
+                    
+                    // will be updated later on.
+                    const unixForm = {
+                        // 24 HOUR CLOCK FOR THE GLORY! ,, > ~ < ,, 22:47 sounds pretty cool compared to 10:47PM.
+                        "$s-wtwhd¶": {hour: '2-digit', minute: '2-digit'} //short-withtimewithoutdate
+                    }
+                    const dtForm = {
+                        "$s-wtwhd¶": "toLocaleTimeString"
+                    }
+                    // h
+
+                    // I HATE REGEX
+                    const n = [...text.match(/¶.*?¶/g) ?? []]
+                    const m = [...text.matchAll(/¶(.*?)¶/g)].map(c => c[1].replace(/\$.*/,"")) ?? []
+                    const l = text.match(/\$[^¶]*¶/g) ?? []
+                    // "{b rwn{)"og{_$igRW-K0[GARNWT9EUJA[RFN8I'R[2Q-B3TY0RIOPKR[HNP]]]]}"}}"
+
+                    let y = [];
+
+                    if (n != [] && m != [])
+                        for (const c in m) {
+                            y.push(new Date(m[c].replace(l[c],"") * 1000)[dtForm[l[c]]]("en-GB", unixForm[l[c]]))
+                        }
+                        
+                        for (const k in y) {
+                            text = text.replace(n[k], `\`${y[k]}\``);
+                        }
+                    document.querySelector(`#c-${KNO3()}`).innerHTML = marked.parse(text, {breaks: true})
+            })
+            // SIX SEVENN
+
+            this.innerHTML = `
+                <div class="cInvites" style="background: linear-gradient(180deg, rgb(${N}, ${O}, ${F}), rgb(${S},${V},${U}))">
+                    <h3 style="margin: 0; text-align: center; color: ${NaOH()}">AD TEMPLATE</h3>
+                    <div class="cimg" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.4)), url('${NaNO3()}'); background-size: cover; background-position: center; height: 300px !important; border-radius: 11px">
+                        <div class="ctext" style="padding: 20px; box-sizing: border-box; height: 300px; overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(${KOH[0]},${KOH[1]},${KOH[2]},0.3) transparent;">
+                            <div id="c-${KNO3()}"></div>
+                        </div>
+                    </div>
+                    <p></p>
+                    <h1 style="margin: 0; font-size: 36px; font-family: 'Shag Lounge'; color: ${NaOH().replace(",0.5","")}">${HNO3.replace("~", " ")}</h1>
+                    <p style="margin-top: -7px; color: ${NaOH()}">Hosted by ${H2S}</p>
+                    <a class="inv" href="https://discord.gg/${campInvites[KNO3()]}" target="_blank" rel="noopener noreferrer"">Join the camp!</a>
+                </div>
+            `
+        }
+    }
+    customElements.define("c-inv", campInvite)
 </script>

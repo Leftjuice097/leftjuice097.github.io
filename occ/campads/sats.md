@@ -1,0 +1,5 @@
+Welcome to **⛵ Sailin' Around The Seas ⛵** (SATS for short), a camp hosted by Underwater Cube (sleepyhead.z_z)! SATS is a long-term camp that typically lasts around 2 to 3 months.
+
+This camp typically has three types of the challenges: creativity, social challenges and game challenges.The challenges/results/eliminations will be usually always announced at ¶25029543600$s-wtwhd¶ and players will have 1-2 days to complete the challenge, 24 hours to strategize and 24 hours to vote out someone from camp. Failure to do the challenges three times will result in automatic removal from the camp, so if this schedule doesn't work with you, then we would rather if you didn't signed up. Additionally, each season has its own gimmick, which makes a refresh experience for veterans and newbies every time they join a new season.
+
+Season 10 is ongoing, featuring the **all-stars** cast of SATS.

@@ -1,0 +1,3 @@
+*Word’s Camp is a **fast paced** camp that focuses on creating a competitive environment between players. This environment allows for all kinds of players to thrive and dominate the competition! This camp is heavily inspired by Survivor and ranks entries based off creativity. If you’re looking for a fun, laid-back, and competitive camp to compete in, what are you waiting for?*
+
+*Season 15 have just reached the **MERGE**! Featuring the theme of **Heroes vs Villains***
