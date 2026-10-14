@@ -8,7 +8,7 @@
     --bg4: darkgreen;
     --bg5: rgb(6, 156, 6);
     /* oopsie forgot to put it first */
-    --bg6: linear-gradient(180deg, rgba(26, 82, 4, 0.555), rgba(26, 82, 4, 0.192)), url("./bg.png");
+    --bg6: linear-gradient(180deg, rgba(26, 82, 4, 0.555), rgba(26, 82, 4, 0.192)), url("/bgs/bg.png");
     --bg7: rgba(0, 128, 0, 0);
     /* ends */
     --maths1 :rgba(0, 255, 0, 0.5);
@@ -30,7 +30,7 @@
     --bg4: rgb(100, 0, 83);
     --bg5: rgb(156, 6, 111);
     /* oopsie forgot to put it first */
-    --bg6: linear-gradient(180deg, rgba(82, 4, 72, 0.555), rgba(82, 4, 69, 0.192)), url("./bgpink.jpg");
+    --bg6: linear-gradient(180deg, rgba(82, 4, 72, 0.555), rgba(82, 4, 69, 0.192)), url("/bgs/bgpink.jpg");
     --bg7: rgba(128, 0, 107, 0);
     /* ends */
     --maths1 :rgba(255, 0, 221, 0.5);
@@ -106,6 +106,7 @@ f-a {
     flex-direction: column;
     right: 0;
     margin-top: 20px;
+    top: 100%;
     position: absolute;
     padding: 13px;
     gap: 9px;
@@ -114,6 +115,7 @@ f-a {
 }
 .asdas {
     position: relative;
+    display: inline-block;
 }
 button {
     background-color: var(--bg4);
@@ -133,6 +135,20 @@ button:hover{
 }
 html {
     interpolate-size: allow-keywords;
+    scrollbar-width: thin;
+    scrollbar-color: var(--maths2) var(--bg4);
+}
+
+html::-webkit-scrollbar {
+    width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--maths2);
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--bg4);
 }
 .animate::details-content {
     overflow: hidden;

@@ -1,15 +1,16 @@
 // modifying crap cause jekyll hates "document.lastModified". 17:02 25 Aug 2026
 const modify = {
-  "/": "2026-07-31T11:19:19+07:00", 
-  "/clock/": "2026-07-31T11:19:21+07:00", 
+  "/": "2026-10-14T16:27:12+07:00", 
   "/dev/": "2026-07-31T11:19:21+07:00", 
   "/goodies/htmlencode/": "2026-08-01T11:43:34+07:00", 
   "/goodies/maths/": "2026-08-01T11:43:33+07:00", 
   "/goodies/randomizer/": "2026-08-01T11:43:33+07:00", 
-  "/occ/": "2026-08-27T12:11:27+07:00", 
+  "/occ/": "2026-10-14T16:35:02+07:00", 
+  "/time/clock/": "2026-09-04T14:17:16+07:00", 
+  "/time/events/": "2026-09-06T17:42:15+07:00", 
 };
 const modified = new Date(modify[window.location.pathname]);
-// total times I have to run this python script: 8
+// total times I have to run this python script: 18
 // increment it every time. peace out ,, > _ < ,,
 
 class header2 extends HTMLElement {
@@ -20,9 +21,15 @@ connectedCallback() {
     this.innerHTML = `
         <div class="headr">
                 <a href="/">Home</a>
-                <a href="/clock/">Clock</a>
+                <a href="#" onclick="menu(this); return false;">Time</a>
+                <div class="asdas">
+                    <div class="menu" style="display:none">
+                        <a href="/time/events">Events</a>
+                        <a href="/time/clock">Clock</a>
+                    </div>
+                </div>
                 <a href="/dev/">Development Projects</a>
-                <a href="#" onclick="menu(); return false;">Goodies</a>
+                <a href="#" onclick="menu(this); return false;">Goodies</a>
                 <div class="asdas">
                     <div class="menu" style="display:none">
                         <a href="/goodies/htmlencode/">SafeHTML</a>
@@ -185,9 +192,8 @@ class img2 extends HTMLElement {
 }
 customElements.define('img-box', img2);
 
-function menu(){
-    const h = document.querySelector(".menu");
-
+function menu(l){
+    const h = l.nextElementSibling.querySelector(".menu");
     h.style.display = 
         h.style.display === "none" ? "flex" : "none";
 }

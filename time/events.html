@@ -1,0 +1,186 @@
+---
+permalink: /time/events/
+---
+
+<!DOCTYPE html>
+<head>
+    <title>Leftjuice's Website | Events</title>
+    <link href="/sty.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+        #ev-ct {
+            display: flex;
+            gap: 25px
+        }
+        .link {
+            color: rgb(121, 232, 240)
+        }
+        #whatthehell {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px
+        }   
+        #schc {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .sch {
+            display: flex;
+            padding: 5px;
+            border-radius: 8px;
+            align-items: center;
+        }
+        d-t {
+            display: block;
+        }
+        .infoS {
+            flex: 1;
+            border-left: 3px solid rgba(255,255,255,0.35);
+            padding: 5px;
+            align-self: stretch;
+
+            display: flex;
+            align-items: center;
+        }
+        .sch * {
+            font-family: 'Inter' !important;
+        }
+        .EVENT * {
+            font-family: 'Inter';
+        }
+        .EVENT h1 {
+            font-size: 52px;
+            margin-bottom: 0;
+        }
+        .EVENT span {
+            display: block;
+            margin-top: -10px;
+        }
+        .aj h1, .bj h1, .cj h1, .dj h1, .ej h1, .fj h1 {
+            margin: 0;
+        }
+    </style>
+</head>
+<h-a></h-a>
+    <div style="margin: 8px">
+        <div id="ev-ct">
+            <div id="ev">
+                <h1>Events</h1>
+                <p>I usually update my schedules with upcoming events, but currently as I am writing this, there's not much up. For now I might update everything very slow</p>
+                <div id="schc">
+                    <div class="sch" style="background: linear-gradient(90deg, #FFF700, #afa900)">
+                        <d-t w="0"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #22F826, #16b119)">
+                        <d-t w="1"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #6A5ACD, #382d80)">
+                        <d-t w="2"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #FF8400, #b85f00)">
+                        <d-t w="3"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #FF98E7, #b85ea3)">
+                        <d-t w="4"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #21E9ED, #17adaf)">
+                        <d-t w="5"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                    <div class="sch" style="background: linear-gradient(90deg, #FF0000, #9b0000)">
+                        <d-t w="6"></d-t>
+                        <div class="infoS"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="ct">
+                <h1>Countdowns</h1>
+                <p>I only put the events that I think it's worth it to be notified on. All of these events are local to my area only. (UTC+7)</p>
+                <div id="whatthehell">
+                    <co-d time="00:00:00,1/1/2027" event="New Year 2027" source="newyear_2027">Happy new year 2027!</co-d>
+                    <co-d time="00:00:00,6/2/2027" event="Lunar New Year 2027" source="lunarnewyear2027">Lunar new year 2027! Spans from 5/2 to 10/2.</co-d>
+                    <co-d time="17:54:55,2/8/2027" event="Partial Solar Eclipse" source="psolar_2-8-2027">
+                        <p>Source: <a href=https://www.timeanddate.com/eclipse/solar/2027-august-2 class="link">timeanddate.com</a><br>Picture: Stellarium</p>
+                        <p>Starts: 17:55<br>Ends: 18:19 (sunset)</p>
+                    </co-d>
+                    <co-d time="23:16:00,31/12/2028" event="Total Lunar Eclipse" source="tlunar_31-12-2028">
+                        <p>Source: <a href=https://www.timeanddate.com/eclipse/lunar/2028-december-31 class="link">timeanddate.com</a><br>Picture: Stellarium</p>
+                        <p>Starts (totality): 23:16<br>Maximum: 23:52<br>Ends: 00:27 (total)</p>
+                        <p>Rare total lunar eclipse on New Years Eve 2028</p>
+                    </co-d>
+                </div>
+            </div>
+        </div>
+    </div>
+<f-a></f-a>
+
+<script>
+    class dateT extends HTMLElement {
+        constructor() {
+            super();
+        }
+        connectedCallback() {
+            const m = {
+                "1": "Jan",
+                "2": "Feb",
+                "3": "Mar",
+                "4": "Apr",
+                "5": "May",
+                "6": "Jun",
+                "7": "Jul",
+                "8": "Aug",
+                "9": "Sep",
+                "10": "Oct",
+                "11": "Nov",
+                "12": "Dec"
+            }            
+
+            let even_useless_arr = []
+            let useless_array = []
+            let even_super_useless_arr = []
+            let stupidly_useless_arr = []
+
+            const mH = new Date()
+            const H = new Date(mH.getFullYear(), mH.getMonth(), mH.getDate())
+            const Bh = H.getDay()
+
+            let useless_variable = Bh === 0 ? 6 : Bh - 1
+            let even_useless_var = new Date(H);
+            even_useless_var.setDate(H.getDate() - useless_variable);
+
+            for (let useless_var = 0; useless_var < 7; useless_var++) {
+                let super_useless = new Date(even_useless_var);
+                super_useless.setDate(even_useless_var.getDate() + useless_var);
+
+                stupidly_useless_arr.push(super_useless.toLocaleDateString("en-GB", {year: "numeric"}))
+                even_useless_arr.push(new Date(super_useless).getDay())
+                useless_array.push(super_useless.toLocaleDateString("en-GB", {day: "numeric", month: "short"}).replace("Sept","Sep"))
+                even_super_useless_arr.push(super_useless.toLocaleDateString("en-GB", {day: "numeric", month: "numeric", year: "numeric"}))
+            }
+
+            const g = this.getAttribute("w")
+            const e = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"][even_useless_arr[g]]
+            const [f, j] = useless_array[g].split(" ")
+            
+            this.innerHTML = `
+            <div style="height: 98%; width: 128px;">
+               <div style="text-align: center">
+                <span style="display: block; margin-bottom: -5px;">${e}</span>
+                <span style="margin-top: -5px;"><span style="font-size: 60px; font-weight: bold;">${f}</span><span style="font-size: 24px;"> ${j}</span></span>
+                <span style="display: block; margin-top: -5px;">${stupidly_useless_arr[g]}</span>
+               </div>
+            </div>
+            `
+        }
+    }
+    customElements.define("d-t", dateT)
+</script>
+<script src="/time/countdown.js"></script>
+<script src="/template.js"></script>
