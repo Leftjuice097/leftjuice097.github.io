@@ -5,12 +5,12 @@ const modify = {
   "/goodies/htmlencode/": "2026-08-01T11:43:34+07:00", 
   "/goodies/maths/": "2026-08-01T11:43:33+07:00", 
   "/goodies/randomizer/": "2026-08-01T11:43:33+07:00", 
-  "/occ/": "2026-10-14T16:35:02+07:00", 
+  "/occ/": "2026-11-17T12:32:01+07:00", 
   "/time/clock/": "2026-09-04T14:17:16+07:00", 
   "/time/events/": "2026-09-06T17:42:15+07:00", 
 };
 const modified = new Date(modify[window.location.pathname]);
-// total times I have to run this python script: 18
+// total times I have to run this python script: 19
 // increment it every time. peace out ,, > _ < ,,
 
 class header2 extends HTMLElement {
